@@ -2,9 +2,11 @@
 
 Portfolio web personal desarrollado desde cero, con formulario de contacto totalmente funcional conectado a un backend propio.
 
+🔗 Repositorio del backend: [portfolio-backend](https://github.com/mkdev000/portfolio-backend)
+
 ## 🚀 Sobre el proyecto
 
-Este portfolio muestra mi perfil como desarrollador web (React, TypeScript, Node.js), mi stack tecnológico, mi trayectoria y mis proyectos. Incluye animaciones, diseño responsive y un sistema de contacto real mediante Node.js/Express y Nodemailer.
+Este portfolio muestra mi perfil como desarrollador web, mi stack tecnológico, mi trayectoria y mis proyectos. Incluye animaciones, diseño responsive y un sistema de contacto real mediante un backend propio en Node.js/Express.
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -13,11 +15,15 @@ Este portfolio muestra mi perfil como desarrollador web (React, TypeScript, Node
 - TypeScript
 - Tailwind CSS
 - Framer Motion (animaciones)
+- Vite (entorno de desarrollo y compilación)
+- ESLint (calidad de código)
 
-**Backend** (formulario de contacto — [repositorio aparte](#))
+**Backend** (formulario de contacto — [repositorio aparte](https://github.com/mkdev000/portfolio-backend))
 - Node.js
 - Express
 - Nodemailer
+- CORS
+- dotenv
 
 ## ✨ Funcionalidades
 
@@ -27,6 +33,14 @@ Este portfolio muestra mi perfil como desarrollador web (React, TypeScript, Node
 - Sección de habilidades con tecnologías organizadas por categoría
 - Sección de proyectos con detalle de cada uno
 - Descarga directa del CV
+
+## 📸 Capturas
+
+*(Añade aquí 1 o 2 capturas de tu portfolio cuando lo tengas desplegado)*
+
+## 🔗 Demo en vivo
+
+*(Añade aquí el enlace cuando lo despliegues en Vercel)*
 
 ## 📬 Contacto
 
