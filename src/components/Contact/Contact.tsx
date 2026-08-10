@@ -147,34 +147,33 @@ function Contact() {
           <span>kevin009673@gmail.com</span>
         </div>
 
-        <div className="flex items-center justify-between mt-16 pt-6 border-t border-gray-200 text-sm text-gray-600">
+      </div>
 
-          <div className="flex items-center gap-1.5">
-            <span>Desarrollado por Kevin</span>
-            <FiHeart className="text-pink-400" />
-          </div>
+      <div className="flex items-center justify-between mt-16 pt-6 border-t border-gray-200 text-sm text-gray-600">
 
-          <div className="flex items-center gap-5">
+        <div className="flex items-center gap-1.5">
+          <span>Desarrollado por Kevin</span>
+          <FiHeart className="text-pink-400" />
+        </div>
 
-            <a href="https://github.com/tu-usuario"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-black transition">
-              <FaGithub className="text-base" color="#181717" />
-              GitHub
-            </a>
+        <div className="flex items-center gap-5">
 
+          <a href="https://github.com/mkdev000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-gray-600 visited:text-gray-600 hover:text-black transition">
+            <FaGithub className="text-base" color="#181717" />
+            GitHub
+          </a>
 
-            <a href="https://linkedin.com/in/tu-usuario"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-black transition"
-            >
-              <FaLinkedin className="text-base" color="#0A66C2" />
-              LinkedIn
-            </a>
-          </div>
-
+          <a href="https://linkedin.com/in/tu-usuario"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-gray-600 visited:text-gray-600 hover:text-black transition"
+          >
+            <FaLinkedin className="text-base" color="#0A66C2" />
+            LinkedIn
+          </a>
         </div>
 
       </div>

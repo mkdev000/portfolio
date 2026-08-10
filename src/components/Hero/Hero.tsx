@@ -65,7 +65,7 @@ function Hero() {
           </motion.a>
 
           <motion.a
-            href="/cv.pdf"
+            href="/cvkevin.pdf"
             download
             className="flex items-center gap-2 border border-gray-500 px-10 py-3 rounded-full font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)]"
             initial={{ opacity: 0, y: 20 }}

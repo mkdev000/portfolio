@@ -72,7 +72,7 @@ function About() {
 
         {/* FOTO */}
 
-        <div className="w-56 sm:w-100 rounded-3xl overflow-hidden self-start mt-28 translate-x-18">
+       <div className="w-56 sm:w-72 lg:w-72 xl:w-80 2xl:w-100 rounded-3xl overflow-hidden lg:self-start lg:mt-16 xl:mt-28 2xl:translate-x-18">
           <img
             src={fotoPerfil}
             alt="Foto de Kevin"
@@ -84,11 +84,11 @@ function About() {
 
         <div className="flex-1">
 
-          <p className="text-left mb-12 max-w-3xl mx-auto -translate-x-8 text-gray-700 leading-8">
+          <p className="text-left mb-12 max-w-3xl mx-auto 2xl:-translate-x-8 text-gray-700 leading-8">
             Soy Kevin Mecinas, desarrollador web especializado en React, Node.js (Express) y SQL. Compagino mis estudios en DAW y proyectos personales con mi trabajo como carpintero metálico, donde en cuatro años he forjado un perfil riguroso, preciso y orientado al detalle. Con nivel B2 de inglés y una fuerte vocación colaborativa, destaco por mi rápida adaptación técnica y resolución de problemas. Busco dar el salto al desarrollo de software para aportar valor desde el primer día y diseñar arquitecturas digitales eficientes y escalables.
           </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto -translate-x-8">
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto 2xl:-translate-x-8">
             {cards.map((card) => (
               <li
                 key={card.title}
@@ -112,12 +112,12 @@ function About() {
 
                 <a
                   href={card.link}
-  target={card.link.startsWith("#") ? undefined : "_blank"}
-  rel={card.link.startsWith("#") ? undefined : "noopener noreferrer"}
-  className="mt-auto w-fit flex items-center justify-center gap-2 border-[0.5px] border-gray-400 rounded-xl px-12 py-2 text-sm transition-all duration-300 hover:bg-gray-100"
->
-  Ver más
-</a>
+                  target={card.link.startsWith("#") ? undefined : "_blank"}
+                  rel={card.link.startsWith("#") ? undefined : "noopener noreferrer"}
+                  className="mt-auto w-fit flex items-center justify-center gap-2 border-[0.5px] border-gray-400 rounded-xl px-12 py-2 text-sm transition-all duration-300 hover:bg-gray-100"
+                >
+                  Ver más
+                </a>
               </li>
             ))}
           </ul>

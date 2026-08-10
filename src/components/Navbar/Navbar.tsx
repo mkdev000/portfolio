@@ -19,16 +19,15 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full px-5 sm:px-8 xl:px-[6%] py-4 flex items-center justify-between transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-lg shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 z-50 w-full px-5 sm:px-8 xl:px-[6%] py-4 flex items-center justify-between transition-all duration-300 ${scrolled
+        ? "bg-white/80 backdrop-blur-lg shadow-sm"
+        : "bg-transparent"
+        }`}
     >
       {/* LOGO */}
       <div className="flex items-center min-[950px]:flex-1">
         <a href="#inicio">
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight cursor-pointer">
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight cursor-pointer whitespace-nowrap">
             Kevin Mecinas
           </h2>
         </a>
@@ -74,7 +73,7 @@ function Navbar() {
 
         <li>
           <a
-            href="https://github.com/TU_USUARIO"
+            href="https://github.com/mkdev000"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 cursor-pointer transition-colors hover:text-gray-500"
@@ -149,11 +148,12 @@ function Navbar() {
         {/* BOTÓN CONTACTAR - SOLO DESDE 950px */}
         <a
           href="#contacto"
-  className="hidden min-[1024px]:flex items-center gap-3 px-8 py-2.5 border border-gray-500 rounded-full ml-4 group transition-colors duration-300"
->
-  Contáctame
-  <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-1" />
-</a>
+          className="hidden min-[1180px]:flex items-center gap-3 px-8 py-2.5 border border-gray-500 rounded-full ml-4 group transition-colors duration-300"
+        >
+
+          Contáctame
+          <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
       </div>
 
       {/* MENÚ DESPLEGABLE MÓVIL/TABLET */}

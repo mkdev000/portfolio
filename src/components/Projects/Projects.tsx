@@ -9,6 +9,7 @@ import {
   SiExpress,
   SiMysql,
 } from "react-icons/si";
+import { FaGithub, FaArrowRight } from "react-icons/fa";
 
 const techIcons = {
   React: { icon: SiReact, color: "#61DAFB" },
@@ -50,34 +51,38 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     return () => observer.disconnect();
   }, []);
 
+  const rotation = index % 2 === 1 ? "rotate-3" : "-rotate-3";
+
   return (
     <div
       ref={cardRef}
-      className={`grid lg:grid-cols-2 gap-10 items-center bg-white rounded-3xl border border-gray-200 shadow-sm p-6 lg:p-8 transition-all duration-700 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] ${
+      className={`group relative grid lg:grid-cols-2 gap-10 items-center rounded-3xl p-6 lg:p-10 transition-all duration-700 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <div className={`overflow-hidden rounded-2xl ${index % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}>
-
+      <div className={index % 2 === 1 ? "lg:order-2" : "lg:order-1"}>
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-[320px] object-cover transition duration-500 hover:scale-105" />
-
+          className={`w-full h-[280px] object-cover rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-transform duration-500 ${rotation} group-hover:rotate-0 group-hover:scale-[1.02]`}
+        />
       </div>
 
-      <div className={index % 2 === 1 ? "lg:order-1" : "lg:order-2"}>
+      <div className={`relative ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
 
-        <h3 className="text-3xl font-semibold">
+        <span className="absolute -top-8 right-0 text-6xl font-bold text-gray-100 select-none">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        <h3 className="relative text-3xl font-semibold">
           {project.title}
         </h3>
 
-        <p className="mt-5 text-gray-600 leading-8">
+        <p className="relative mt-5 text-gray-600 leading-8">
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-3 mt-6">
-
+        <div className="relative flex flex-wrap gap-3 mt-6 mb-8">
           {project.technologies.map((tech: string) => {
             const Icon = techIcons[tech as keyof typeof techIcons]?.icon;
             const color = techIcons[tech as keyof typeof techIcons]?.color;
@@ -91,25 +96,28 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               </span>
             );
           })}
-
         </div>
 
-        <div className="flex gap-4 mt-8">
-
-          <a
-            href={project.demo}
+        <div className="relative flex gap-3">
+          
+            <a href={project.demo}
             target="_blank"
-            className="px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-100 transition">
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black text-white text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)]"
+          >
             Demo
+            <FaArrowRight size={12} />
           </a>
 
-          <a
-            href={project.github}
+          
+            <a href={project.github}
             target="_blank"
-            className="px-6 py-3 rounded-xl bg-black text-white hover:bg-gray-800 transition">
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full border-[0.5px] border-gray-400 text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)]"
+          >
+            <FaGithub size={15} />
             GitHub
           </a>
-
         </div>
 
       </div>
