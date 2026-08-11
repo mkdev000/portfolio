@@ -1,4 +1,5 @@
 import { FaHandshake, FaServer } from "react-icons/fa";
+import { motion } from "framer-motion";
 import {
   SiHtml5,
   SiCss,
@@ -16,10 +17,14 @@ import { DiVisualstudio } from "react-icons/di";
 
 function Skills() {
   return (
-    <section
-      id="skills"
-      className="w-full px-4 sm:px-8 xl:px-[6%] py-10 scroll-mt-20 mb-24"
-    >
+    <motion.section
+  id="skills"
+  className="w-full px-4 sm:px-8 xl:px-[6%] py-10 scroll-mt-20 mb-24"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.2 }}
+  transition={{ duration: 0.7 }}
+>
       <h4 className="text-center mb-2 text-lg">
         Estas son mis
       </h4>
@@ -28,11 +33,23 @@ function Skills() {
         Habilidades
       </h2>
 
-      <p className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8">
-        Mi perfil combina una base técnica sólida en tecnologías frontend y backend con la resiliencia y el trabajo en equipo desarrollados en entornos de alta exigencia. Esta suma de habilidades me permite afrontar retos complejos con una mentalidad estructurada, adaptable y siempre orientada a resultados.
-      </p>
+      <motion.p
+  className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.5 }}
+  transition={{ duration: 0.6 }}
+>
+  Mi perfil combina una base técnica sólida en tecnologías frontend y backend con la resiliencia y el trabajo en equipo desarrollados en entornos de alta exigencia. Esta suma de habilidades me permite afrontar retos complejos con una mentalidad estructurada, adaptable y siempre orientada a resultados.
+</motion.p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto mt-14">
+      <motion.div
+  className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto mt-14"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.4 }}
+  transition={{ duration: 0.6 }}
+>
 
         {/* SOFT SKILLS */}
         <div className="border border-gray-200 rounded-xl p-6 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] hover:bg-purple-50">
@@ -152,9 +169,9 @@ function Skills() {
           </ul>
         </div>
 
-      </div>
+       </motion.div>
 
-    </section>
+    </motion.section>
   );
 }
 

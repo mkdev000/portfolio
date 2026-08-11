@@ -1,6 +1,6 @@
 import taskManagerImg from "../../assets/images/projects/task-manager.jpg";
 import sportsPlatformImg from "../../assets/images/projects/sports-platform.jpg";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import {
   SiReact,
   SiTypescript,
@@ -30,35 +30,15 @@ type Project = {
 };
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const cardRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   const rotation = index % 2 === 1 ? "rotate-3" : "-rotate-3";
 
   return (
-    <div
-      ref={cardRef}
-      className={`group relative grid lg:grid-cols-2 gap-10 items-center rounded-3xl p-6 lg:p-10 transition-all duration-700 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+    <motion.div
+      className="group relative grid lg:grid-cols-2 gap-10 items-center rounded-3xl p-6 lg:p-10 transition-all duration-700 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)]"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.7 }}
     >
       <div className={index % 2 === 1 ? "lg:order-2" : "lg:order-1"}>
         <img
@@ -99,8 +79,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         <div className="relative flex gap-3">
+
           
-            <a href={project.demo}
+           <a href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black text-white text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)]"
@@ -110,7 +91,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </a>
 
           
-            <a href={project.github}
+           <a href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-2.5 rounded-full border-[0.5px] border-gray-400 text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)]"
@@ -122,7 +103,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }
 
@@ -163,9 +144,13 @@ const projects = [
 
 function Projects() {
   return (
-    <section
+    <motion.section
       id="projects"
       className="w-full px-4 sm:px-8 xl:px-[6%] py-10 scroll-mt-20 mb-24"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.7 }}
     >
       <h4 className="text-center mb-2 text-lg">
         Explora mis
@@ -175,9 +160,15 @@ function Projects() {
         Proyectos
       </h2>
 
-      <p className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8">
+      <motion.p
+        className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ duration: 0.6 }}
+      >
         Una selección de proyectos que reflejan mi evolución como desarrollador web. Cada uno de ellos ha sido diseñado para poner en práctica tecnologías modernas y resolver problemas reales mediante soluciones escalables y bien estructuradas.
-      </p>
+      </motion.p>
 
       <div className="max-w-6xl mx-auto mt-16 flex flex-col gap-16">
 
@@ -187,7 +178,7 @@ function Projects() {
 
       </div>
 
-    </section>
+    </motion.section>
   );
 }
 

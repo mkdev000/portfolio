@@ -19,7 +19,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full px-5 sm:px-8 xl:px-[6%] py-4 flex items-center justify-between transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 z-50 w-full px-5 sm:px-8 xl:px-[6%] py-4 flex items-center justify-between gap-4 transition-all duration-300 ${scrolled
         ? "bg-white/80 backdrop-blur-lg shadow-sm"
         : "bg-transparent"
         }`}
@@ -36,8 +36,8 @@ function Navbar() {
       {/* MENÚ ESCRITORIO - SOLO DESDE 950px */}
       <ul className="hidden min-[950px]:flex items-center gap-6 px-8 py-3.5 rounded-full bg-white/90 backdrop-blur-lg shadow-sm font-medium">
         <li>
-          <a
-            href="#inicio"
+          
+            <a href="#inicio"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
             Inicio
@@ -45,8 +45,8 @@ function Navbar() {
         </li>
 
         <li>
-          <a
-            href="#about"
+          
+            <a href="#about"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
             Sobre mí
@@ -54,8 +54,8 @@ function Navbar() {
         </li>
 
         <li>
-          <a
-            href="#skills"
+          
+            <a href="#skills"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
             Habilidades
@@ -63,8 +63,8 @@ function Navbar() {
         </li>
 
         <li>
-          <a
-            href="#projects"
+          
+            <a href="#projects"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
             Proyectos
@@ -72,8 +72,8 @@ function Navbar() {
         </li>
 
         <li>
-          <a
-            href="https://github.com/mkdev000"
+          
+            <a href="https://github.com/mkdev000"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 cursor-pointer transition-colors hover:text-gray-500"
@@ -84,8 +84,8 @@ function Navbar() {
         </li>
 
         <li>
-          <a
-            href="https://www.linkedin.com/in/TU_USUARIO"
+          
+            <a href="https://www.linkedin.com/in/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 cursor-pointer transition-colors hover:text-gray-500"
@@ -100,8 +100,8 @@ function Navbar() {
       <div className="flex items-center gap-3 sm:gap-4 lg:gap-5 min-[950px]:flex-1 min-[950px]:justify-end">
 
         {/* GITHUB MÓVIL/TABLET */}
-        <a
-          href="https://github.com/TU_USUARIO"
+        
+          <a href="https://github.com/TU_USUARIO"
           target="_blank"
           rel="noopener noreferrer"
           className="block min-[950px]:hidden cursor-pointer"
@@ -110,8 +110,8 @@ function Navbar() {
         </a>
 
         {/* LINKEDIN MÓVIL/TABLET */}
-        <a
-          href="https://www.linkedin.com/in/TU_USUARIO"
+        
+          <a href="https://www.linkedin.com/in/TU_USUARIO"
           target="_blank"
           rel="noopener noreferrer"
           className="block min-[950px]:hidden cursor-pointer"
@@ -146,8 +146,8 @@ function Navbar() {
         </button>
 
         {/* BOTÓN CONTACTAR - SOLO DESDE 950px */}
-        <a
-          href="#contacto"
+        
+          <a href="#contacto"
           className="hidden min-[1180px]:flex items-center gap-3 px-8 py-2.5 border border-gray-500 rounded-full ml-4 group transition-colors duration-300"
         >
 

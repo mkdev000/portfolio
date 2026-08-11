@@ -1,4 +1,5 @@
 import fotoPerfil from "../../assets/images/foto-perfil.jpg";
+import { motion } from "framer-motion";
 import { FaCode, FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import {
   SiHtml5,
@@ -56,9 +57,13 @@ const techStack = [
 
 function About() {
   return (
-    <section
+    <motion.section
       id="about"
       className="w-full px-4 sm:px-8 xl:px-[6%] py-10 scroll-mt-20 mb-24"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.7 }}
     >
       <h4 className="text-center mb-2 text-lg">
         Conoce más
@@ -72,7 +77,7 @@ function About() {
 
         {/* FOTO */}
 
-       <div className="w-56 sm:w-72 lg:w-72 xl:w-80 2xl:w-100 rounded-3xl overflow-hidden lg:self-start lg:mt-16 xl:mt-28 2xl:translate-x-18">
+        <div className="w-56 sm:w-72 lg:w-72 xl:w-80 2xl:w-100 rounded-3xl overflow-hidden lg:self-start lg:mt-16 xl:mt-28 2xl:translate-x-18">
           <img
             src={fotoPerfil}
             alt="Foto de Kevin"
@@ -84,11 +89,24 @@ function About() {
 
         <div className="flex-1">
 
-          <p className="text-left mb-12 max-w-3xl mx-auto 2xl:-translate-x-8 text-gray-700 leading-8">
+          <motion.p
+            className="text-left mb-12 max-w-3xl mx-auto lg:-translate-x-8 text-gray-700 leading-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+          >
             Soy Kevin Mecinas, desarrollador web especializado en React, Node.js (Express) y SQL. Compagino mis estudios en DAW y proyectos personales con mi trabajo como carpintero metálico, donde en cuatro años he forjado un perfil riguroso, preciso y orientado al detalle. Con nivel B2 de inglés y una fuerte vocación colaborativa, destaco por mi rápida adaptación técnica y resolución de problemas. Busco dar el salto al desarrollo de software para aportar valor desde el primer día y diseñar arquitecturas digitales eficientes y escalables.
-          </p>
+          </motion.p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto 2xl:-translate-x-8">
+
+          <motion.ul
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto 2xl:-translate-x-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 0.6 }}
+          >
             {cards.map((card) => (
               <li
                 key={card.title}
@@ -120,10 +138,15 @@ function About() {
                 </a>
               </li>
             ))}
-          </ul>
+          </motion.ul>
 
-          <div className="w-full flex flex-col items-center mt-10">
-
+          <motion.div
+            className="w-full flex flex-col items-center mt-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
             <h4 className="text-center mt-6 mb-8 text-lg font-medium">
               Stack Tecnológico
             </h4>
@@ -155,13 +178,13 @@ function About() {
               })}
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 
       </div>
 
-    </section>
+    </motion.section>
   );
 }
 

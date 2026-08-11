@@ -1,4 +1,5 @@
 import { FiMail, FiArrowRight, FiHeart } from "react-icons/fi";
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 
@@ -49,9 +50,9 @@ function Contact() {
       setSuccess(false);
       setError(true);
 
-       setTimeout(() => {
-    setError(false);
-  }, 3000);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
 
     } finally {
       setLoading(false);
@@ -60,18 +61,31 @@ function Contact() {
 
 
   return (
-    
-  <section id="contacto" className="w-full px-4 sm:px-8 xl:px-[6%] py-10 scroll-mt-20 mb-12">
 
-    <h2 className="text-center text-5xl font-semibold">
-      Contáctame
-    </h2>
+    <motion.section
+      id="contacto"
+      className="w-full px-4 sm:px-8 xl:px-[6%] py-10 scroll-mt-20 mb-12"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.7 }}
+    >
 
-    <p className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8">
-      Si tienes alguna pregunta, consulta o feedback, no dudes en contactarme.
-    </p>
+      <h2 className="text-center text-5xl font-semibold">
+        Contáctame
+      </h2>
 
-      <div className="max-w-3xl mx-auto mt-12">
+      <p className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8">
+        Si tienes alguna pregunta, consulta o feedback, no dudes en contactarme.
+      </p>
+
+      <motion.div
+        className="max-w-3xl mx-auto mt-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-6">
@@ -147,9 +161,15 @@ function Contact() {
           <span>kevin009673@gmail.com</span>
         </div>
 
-      </div>
+      </motion.div>
 
-      <div className="flex items-center justify-between mt-16 pt-6 border-t border-gray-200 text-sm text-gray-600">
+      <motion.div
+        className="flex items-center justify-between mt-16 pt-6 border-t border-gray-200 text-sm text-gray-600"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+      >
 
         <div className="flex items-center gap-1.5">
           <span>Desarrollado por Kevin</span>
@@ -176,9 +196,9 @@ function Contact() {
           </a>
         </div>
 
-      </div>
+      </motion.div>
 
-    </section>
+    </motion.section>
   );
 }
 
