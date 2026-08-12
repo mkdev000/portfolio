@@ -75,7 +75,7 @@ function Contact() {
         Contáctame
       </h2>
 
-      <p className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8">
+      <p className="text-center mt-6 max-w-2xl mx-auto text-gray-600 dark:text-[#838383] leading-8">
         Si tienes alguna pregunta, consulta o feedback, no dudes en contactarme.
       </p>
 
@@ -102,7 +102,7 @@ function Contact() {
                   name: e.target.value,
                 })
               }
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-black transition"
+              className="w-full rounded-xl border border-gray-300 dark:border-[#363636] dark:bg-[#363636] dark:text-[#e3e3e3] dark:placeholder:text-[#838383] px-4 py-3 outline-none focus:border-black dark:focus:border-[#838383] transition"
             />
 
             <input
@@ -116,7 +116,7 @@ function Contact() {
                   email: e.target.value,
                 })
               }
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-black transition"
+              className="w-full rounded-xl border border-gray-300 dark:border-[#363636] dark:bg-[#363636] dark:text-[#e3e3e3] dark:placeholder:text-[#838383] px-4 py-3 outline-none focus:border-black dark:focus:border-[#838383] transition"
             />
           </div>
 
@@ -131,13 +131,13 @@ function Contact() {
                 message: e.target.value,
               })
             }
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none focus:border-black transition"
+           className="w-full rounded-xl border border-gray-300 dark:border-[#363636] dark:bg-[#363636] dark:text-[#e3e3e3] dark:placeholder:text-[#838383] px-4 py-3 outline-none resize-none focus:border-black dark:focus:border-[#838383] transition"
           ></textarea>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-fit mx-auto flex items-center gap-2 px-8 py-3 rounded-full bg-black text-white font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-fit mx-auto flex items-center gap-2 px-8 py-3 rounded-full bg-black dark:bg-[#363636] text-white dark:text-[#e3e3e3] font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[6px_6px_0px_#a7a7a7] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {loading ? "Enviando..." : <>Enviar <FiArrowRight /></>}
           </button>
@@ -156,7 +156,7 @@ function Contact() {
 
         </form>
 
-        <div className="flex items-center justify-center gap-2 mt-10 text-gray-600">
+        <div className="flex items-center justify-center gap-2 mt-10 text-gray-600 dark:text-[#e3e3e3]">
           <FiMail className="text-lg" />
           <span>kevin009673@gmail.com</span>
         </div>
@@ -164,7 +164,7 @@ function Contact() {
       </motion.div>
 
       <motion.div
-        className="flex items-center justify-between mt-16 pt-6 border-t border-gray-200 text-sm text-gray-600"
+        className="flex items-center justify-between mt-16 pt-6 border-t border-gray-200 dark:border-[#363636] text-sm text-gray-600 dark:text-[#838383]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.5 }}
@@ -181,7 +181,7 @@ function Contact() {
           <a href="https://github.com/mkdev000"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-gray-600 visited:text-gray-600 hover:text-black transition">
+            className="flex items-center gap-1.5 text-gray-600 dark:text-[#838383] visited:text-gray-600 dark:visited:text-[#838383] hover:text-black dark:hover:text-[#e3e3e3] transition">
             <FaGithub className="text-base" color="#181717" />
             GitHub
           </a>
@@ -189,7 +189,7 @@ function Contact() {
           <a href="https://linkedin.com/in/tu-usuario"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-gray-600 visited:text-gray-600 hover:text-black transition"
+            className="flex items-center gap-1.5 text-gray-600 dark:text-[#838383] visited:text-gray-600 dark:visited:text-[#e3e3e3] hover:text-black dark:hover:text-[#e3e3e3] transition"
           >
             <FaLinkedin className="text-base" color="#0A66C2" />
             LinkedIn

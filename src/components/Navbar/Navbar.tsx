@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { FaMoon } from "react-icons/fa6";
+import { FaMoon, FaSun } from "react-icons/fa6";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiArrowRight, FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +20,22 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const root = document.documentElement;
+
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
   return (
     <nav
       className={`fixed top-0 left-0 z-50 w-full px-5 sm:px-8 xl:px-[6%] py-4 flex items-center justify-between gap-4 transition-all duration-300 ${scrolled
-        ? "bg-white/80 backdrop-blur-lg shadow-sm"
+        ? "bg-white/80 dark:bg-[#363636]/80 backdrop-blur-lg shadow-sm"
         : "bg-transparent"
         }`}
     >
@@ -34,19 +49,19 @@ function Navbar() {
       </div>
 
       {/* MENÚ ESCRITORIO - SOLO DESDE 950px */}
-      <ul className="hidden min-[950px]:flex items-center gap-6 px-8 py-3.5 rounded-full bg-white/90 backdrop-blur-lg shadow-sm font-medium">
+      <ul className="hidden min-[950px]:flex items-center gap-6 px-8 py-3.5 rounded-full bg-white/90 dark:bg-[#363636]/90 backdrop-blur-lg shadow-sm font-medium">
         <li>
-          
-            <a href="#inicio"
-            className="cursor-pointer transition-colors hover:text-gray-500"
+
+          <a href="#inicio"
+            className="cursor-pointer transition-colors hover:text-gray-500 dark:hover:text-[#838383]"
           >
             Inicio
           </a>
         </li>
 
         <li>
-          
-            <a href="#about"
+
+          <a href="#about"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
             Sobre mí
@@ -54,8 +69,8 @@ function Navbar() {
         </li>
 
         <li>
-          
-            <a href="#skills"
+
+          <a href="#skills"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
             Habilidades
@@ -63,8 +78,8 @@ function Navbar() {
         </li>
 
         <li>
-          
-            <a href="#projects"
+
+          <a href="#projects"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
             Proyectos
@@ -72,8 +87,8 @@ function Navbar() {
         </li>
 
         <li>
-          
-            <a href="https://github.com/mkdev000"
+
+          <a href="https://github.com/mkdev000"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 cursor-pointer transition-colors hover:text-gray-500"
@@ -84,8 +99,8 @@ function Navbar() {
         </li>
 
         <li>
-          
-            <a href="https://www.linkedin.com/in/TU_USUARIO"
+
+          <a href="https://www.linkedin.com/in/TU_USUARIO"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 cursor-pointer transition-colors hover:text-gray-500"
@@ -100,8 +115,8 @@ function Navbar() {
       <div className="flex items-center gap-3 sm:gap-4 lg:gap-5 min-[950px]:flex-1 min-[950px]:justify-end">
 
         {/* GITHUB MÓVIL/TABLET */}
-        
-          <a href="https://github.com/TU_USUARIO"
+
+        <a href="https://github.com/TU_USUARIO"
           target="_blank"
           rel="noopener noreferrer"
           className="block min-[950px]:hidden cursor-pointer"
@@ -110,8 +125,8 @@ function Navbar() {
         </a>
 
         {/* LINKEDIN MÓVIL/TABLET */}
-        
-          <a href="https://www.linkedin.com/in/TU_USUARIO"
+
+        <a href="https://www.linkedin.com/in/TU_USUARIO"
           target="_blank"
           rel="noopener noreferrer"
           className="block min-[950px]:hidden cursor-pointer"
@@ -122,19 +137,24 @@ function Navbar() {
         {/* MODO OSCURO */}
         <button
           aria-label="Cambiar tema"
-          className="cursor-pointer text-[#1F1F1F]"
+          onClick={() => setDarkMode(!darkMode)}
+          className="cursor-pointer text-[#1F1F1F] dark:text-[#e3e3e3]"
         >
-          <FaMoon className="text-lg" />
+          {darkMode ? (
+            <FaSun className="text-lg" />
+          ) : (
+            <FaMoon className="text-lg" />
+          )}
         </button>
 
         {/* IDIOMA */}
-        <button className="w-6 cursor-pointer font-medium text-[#1F1F1F]">
+        <button className="w-6 cursor-pointer font-medium text-[#1F1F1F] dark:text-[#e3e3e3]">
           ES
         </button>
 
         {/* MENÚ HAMBURGUESA */}
         <button
-          className="min-[950px]:hidden ml-1 cursor-pointer text-[#1F1F1F]"
+          className="min-[950px]:hidden ml-1 cursor-pointer text-[#1F1F1F] dark:text-[#e3e3e3]"
           aria-label="Abrir menú"
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -146,9 +166,9 @@ function Navbar() {
         </button>
 
         {/* BOTÓN CONTACTAR - SOLO DESDE 950px */}
-        
-          <a href="#contacto"
-          className="hidden min-[1180px]:flex items-center gap-3 px-8 py-2.5 border border-gray-500 rounded-full ml-4 group transition-colors duration-300"
+
+        <a href="#contacto"
+          className="hidden min-[1180px]:flex items-center gap-3 px-8 py-2.5 border border-gray-500 dark:border-[#e3e3e3] rounded-full ml-4 group transition-colors duration-300"
         >
 
           Contáctame
@@ -158,7 +178,7 @@ function Navbar() {
 
       {/* MENÚ DESPLEGABLE MÓVIL/TABLET */}
       {menuOpen && (
-        <ul className="min-[950px]:hidden absolute top-full right-4 sm:right-5 mt-3 w-[calc(100vw-2rem)] max-w-64 flex flex-col gap-5 py-8 px-8 rounded-2xl bg-white/95 backdrop-blur-lg shadow-lg font-medium">
+        <ul className="min-[950px]:hidden absolute top-full right-4 sm:right-5 mt-3 w-[calc(100vw-2rem)] max-w-64 flex flex-col gap-5 py-8 px-8 rounded-2xl bg-white/95 dark:bg-[#333]/95 backdrop-blur-lg shadow-lg font-medium">
           <li>
             <a href="#inicio" onClick={() => setMenuOpen(false)}>
               Inicio

@@ -50,7 +50,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <div className={`relative ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
 
-        <span className="absolute -top-8 right-0 text-6xl font-bold text-gray-100 select-none">
+        <span className="absolute -top-8 right-0 text-6xl font-bold text-gray-100 dark:text-[#363636] select-none">
           {String(index + 1).padStart(2, "0")}
         </span>
 
@@ -58,7 +58,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {project.title}
         </h3>
 
-        <p className="relative mt-5 text-gray-600 leading-8">
+        <p className="relative mt-5 text-gray-600 dark:text-[#838383] leading-8">
           {project.description}
         </p>
 
@@ -70,7 +70,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             return (
               <span
                 key={tech}
-                className="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-sm">
+                className="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-[#363636] text-sm">
                 {Icon && <Icon color={color} size={16} />}
                 {tech}
               </span>
@@ -80,21 +80,21 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         <div className="relative flex gap-3">
 
-          
-           <a href={project.demo}
+
+          <a href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black text-white text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)]"
+           className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black dark:bg-[#363636] text-white dark:text-[#e3e3e3] text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[4px_4px_0px_#a7a7a7]"
           >
             Demo
             <FaArrowRight size={12} />
           </a>
 
-          
-           <a href={project.github}
+
+          <a href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full border-[0.5px] border-gray-400 text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)]"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full border-[0.5px] border-gray-400 dark:border-[#363636] text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[4px_4px_0px_#a7a7a7]"
           >
             <FaGithub size={15} />
             GitHub
@@ -161,7 +161,7 @@ function Projects() {
       </h2>
 
       <motion.p
-        className="text-center mt-6 max-w-2xl mx-auto text-gray-600 leading-8"
+        className="text-center mt-6 max-w-2xl mx-auto text-gray-600 dark:text-[#e3e3e3] leading-8"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.5 }}
