@@ -131,7 +131,7 @@ function Skills() {
 
           <ul className="flex flex-col gap-3 text-sm">
             <li className="flex items-center justify-between">
-              <span className="flex items-center gap-2 text-gray-400 dark:text-[#e3e3e3]">
+              <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiNodedotjs color="#5FA04E" size={16} /> Node.js
               </span>
               <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>

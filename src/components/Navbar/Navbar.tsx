@@ -100,7 +100,7 @@ function Navbar() {
 
         <li>
 
-          <a href="https://www.linkedin.com/in/TU_USUARIO"
+          <a href="https://www.linkedin.com/in/kevin-mecinas-jim%C3%A9nez-46860a429/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 cursor-pointer transition-colors hover:text-gray-500"
@@ -116,7 +116,7 @@ function Navbar() {
 
         {/* GITHUB MÓVIL/TABLET */}
 
-        <a href="https://github.com/TU_USUARIO"
+        <a href="https://github.com/mkdev000"
           target="_blank"
           rel="noopener noreferrer"
           className="block min-[950px]:hidden cursor-pointer"
@@ -126,7 +126,7 @@ function Navbar() {
 
         {/* LINKEDIN MÓVIL/TABLET */}
 
-        <a href="https://www.linkedin.com/in/TU_USUARIO"
+        <a href="https://www.linkedin.com/in/kevin-mecinas-jim%C3%A9nez-46860a429/"
           target="_blank"
           rel="noopener noreferrer"
           className="block min-[950px]:hidden cursor-pointer"
