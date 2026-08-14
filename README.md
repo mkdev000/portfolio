@@ -19,9 +19,9 @@ Este portfolio muestra mi perfil como desarrollador web, mi stack tecnológico, 
 - <img src="https://skillicons.dev/icons?i=react" width="20" height="20" alt="React"/> **React**
 - <img src="https://skillicons.dev/icons?i=ts" width="20" height="20" alt="TypeScript"/> **TypeScript**
 - <img src="https://skillicons.dev/icons?i=tailwind" width="20" height="20" alt="Tailwind CSS"/> **Tailwind CSS**
-- <img src="https://skillicons.dev/icons?i=framer" width="20" height="20" alt="Framer Motion"/> **Framer Motion** (animaciones)
+- **Framer Motion** (animaciones)
 - <img src="https://skillicons.dev/icons?i=vite" width="20" height="20" alt="Vite"/> **Vite** (entorno de desarrollo y compilación)
-- <img src="https://skillicons.dev/icons?i=eslint" width="20" height="20" alt="ESLint"/> **ESLint** (calidad de código)
+- **ESLint** (calidad de código)
 
 **Backend** (formulario de contacto — [repositorio aparte](https://github.com/mkdev000/portfolio-backend))
 
