@@ -189,7 +189,7 @@ function Contact() {
           <a href="https://www.linkedin.com/in/kevin-mecinas-jim%C3%A9nez-46860a429/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-gray-600 dark:text-[#838383] visited:text-gray-600 dark:visited:text-[#e3e3e3] hover:text-black dark:hover:text-[#e3e3e3] transition"
+            className="flex items-center gap-1.5 text-gray-600 dark:text-[#838383] visited:text-gray-600 dark:visited:text-[#838383] hover:text-black dark:hover:text-[#e3e3e3] transition"
           >
             <FaLinkedin className="text-base" color="#0A66C2" />
             LinkedIn
