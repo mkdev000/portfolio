@@ -1,5 +1,5 @@
 import taskManagerImg from "../../assets/images/projects/task-manager.jpg";
-import sportsPlatformImg from "../../assets/images/projects/sports-platform.jpg";
+import rutlinkImg from "../../assets/images/projects/rutlink.png";
 import { motion } from "framer-motion";
 import {
   SiReact,
@@ -84,7 +84,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <a href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-           className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black dark:bg-[#363636] text-white dark:text-[#e3e3e3] text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[4px_4px_0px_#a7a7a7]"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black dark:bg-[#363636] text-white dark:text-[#e3e3e3] text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[4px_4px_0px_#a7a7a7]"
           >
             Demo
             <FaArrowRight size={12} />
@@ -125,9 +125,9 @@ const projects = [
     demo: "#",
   },
   {
-    title: "Plataforma Deportiva",
+    title: "Rutlink",
     description:
-      "Aplicación web para la gestión de equipos, partidos y usuarios con autenticación y panel de administración.",
+      "Acortador de URLs con estadísticas de clics en tiempo real. Genera enlaces cortos, cópialos al instante y consulta cuántas veces se han visitado.",
     technologies: [
       "React",
       "TypeScript",
@@ -136,9 +136,9 @@ const projects = [
       "Express",
       "MySQL",
     ],
-    image: sportsPlatformImg,
-    github: "#",
-    demo: "#",
+    image: rutlinkImg,
+    github: "https://github.com/mkdev000/acortador-urls-frontend",
+    demo: "https://rutlink.vercel.app",
   },
 ];
 
