@@ -1,4 +1,4 @@
-import taskManagerImg from "../../assets/images/projects/task-manager.jpg";
+import kmtaskImg from "../../assets/images/projects/kmtask.png";
 import rutlinkImg from "../../assets/images/projects/rutlink.png";
 import { motion } from "framer-motion";
 import {
@@ -108,10 +108,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 const projects = [
-  {
-    title: "Gestor de Tareas",
+   {
+    title: "KmTask",
     description:
-      "Aplicación Full Stack para organizar tareas mediante autenticación de usuarios, gestión de proyectos y panel personalizado.",
+      "Gestor de tareas personal con autenticación de usuarios (JWT + bcrypt), tareas privadas por usuario, prioridades, calendario y panel con estadísticas en tiempo real.",
     technologies: [
       "React",
       "TypeScript",
@@ -120,9 +120,9 @@ const projects = [
       "Express",
       "MySQL",
     ],
-    image: taskManagerImg,
-    github: "#",
-    demo: "#",
+    image: kmtaskImg,
+    github: "https://github.com/mkdev000/gestor-tareas-frontend",
+    demo: "https://kmtask.vercel.app",
   },
   {
     title: "Rutlink",
