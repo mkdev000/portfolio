@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiArrowRight, FiMenu, FiX } from "react-icons/fi";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,6 +10,7 @@ function Navbar() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +57,7 @@ function Navbar() {
           <a href="#inicio"
             className="cursor-pointer transition-colors hover:text-gray-500 dark:hover:text-[#838383]"
           >
-            Inicio
+            {t.navbar.inicio}
           </a>
         </li>
 
@@ -64,7 +66,7 @@ function Navbar() {
           <a href="#about"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
-            Sobre mí
+            {t.navbar.sobreMi}
           </a>
         </li>
 
@@ -73,7 +75,7 @@ function Navbar() {
           <a href="#skills"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
-            Habilidades
+            {t.navbar.habilidades}
           </a>
         </li>
 
@@ -82,7 +84,7 @@ function Navbar() {
           <a href="#projects"
             className="cursor-pointer transition-colors hover:text-gray-500"
           >
-            Proyectos
+            {t.navbar.proyectos}
           </a>
         </li>
 
@@ -148,8 +150,11 @@ function Navbar() {
         </button>
 
         {/* IDIOMA */}
-        <button className="w-6 cursor-pointer font-medium text-[#1F1F1F] dark:text-[#e3e3e3]">
-          ES
+        <button
+          onClick={toggleLanguage}
+          className="w-6 cursor-pointer font-medium text-[#1F1F1F] dark:text-[#e3e3e3]"
+        >
+          {language.toUpperCase()}
         </button>
 
         {/* MENÚ HAMBURGUESA */}
@@ -171,7 +176,7 @@ function Navbar() {
           className="hidden min-[1180px]:flex items-center gap-3 px-8 py-2.5 border border-gray-500 dark:border-[#e3e3e3] rounded-full ml-4 group transition-colors duration-300"
         >
 
-          Contáctame
+          {t.navbar.contactame}
           <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-1" />
         </a>
       </div>
@@ -181,31 +186,31 @@ function Navbar() {
         <ul className="min-[950px]:hidden absolute top-full right-4 sm:right-5 mt-3 w-[calc(100vw-2rem)] max-w-64 flex flex-col gap-5 py-8 px-8 rounded-2xl bg-white/95 dark:bg-[#333]/95 backdrop-blur-lg shadow-lg font-medium">
           <li>
             <a href="#inicio" onClick={() => setMenuOpen(false)}>
-              Inicio
+              {t.navbar.inicio}
             </a>
           </li>
 
           <li>
             <a href="#about" onClick={() => setMenuOpen(false)}>
-              Sobre mí
+              {t.navbar.sobreMi}
             </a>
           </li>
 
           <li>
             <a href="#skills" onClick={() => setMenuOpen(false)}>
-              Habilidades
+              {t.navbar.habilidades}
             </a>
           </li>
 
           <li>
             <a href="#projects" onClick={() => setMenuOpen(false)}>
-              Proyectos
+              {t.navbar.proyectos}
             </a>
           </li>
 
           <li>
             <a href="#contacto" onClick={() => setMenuOpen(false)}>
-              Contáctame
+              {t.navbar.contactame}
             </a>
           </li>
         </ul>
