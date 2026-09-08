@@ -19,7 +19,7 @@ function Contact() {
 
   const [error, setError] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
 
@@ -27,13 +27,17 @@ function Contact() {
     setLoading(true);
 
     try {
-      await fetch("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
+
+      if (!response.ok) {
+        throw new Error("El servidor respondió con un error");
+      }
 
       setFormData({
         name: "",
