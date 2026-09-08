@@ -2,13 +2,13 @@
 
 Portfolio web personal desarrollado desde cero, con formulario de contacto totalmente funcional conectado a un backend propio.
 
-🔗 Repositorio del backend: [portfolio-backend](https://github.com/mkdev000/portfolio-backend)
+🔗 Demo en vivo: [kevinmecinas.vercel.app](https://kevinmecinas.vercel.app)
 
 ---
 
 ## 🚀 Sobre el proyecto
 
-Este portfolio muestra mi perfil como desarrollador web, mi stack tecnológico, mi trayectoria y mis proyectos. Incluye animaciones, diseño responsive y un sistema de contacto real mediante un backend propio en Node.js/Express.
+Este portfolio muestra mi perfil como desarrollador web, mi stack tecnológico, mi trayectoria y mis proyectos. Incluye animaciones, diseño responsive y un sistema de contacto real mediante una función serverless propia desplegada en Vercel.
 
 ---
 
@@ -23,13 +23,12 @@ Este portfolio muestra mi perfil como desarrollador web, mi stack tecnológico, 
 - <img src="https://skillicons.dev/icons?i=vite" width="20" height="20" alt="Vite"/> **Vite** – Empaquetado y servidor de desarrollo del proyecto.
 - **ESLint** – Revisión de calidad y buenas prácticas en el código.
 
-**Backend** (formulario de contacto — [repositorio aparte](https://github.com/mkdev000/portfolio-backend))
+**Backend** (formulario de contacto — función serverless dentro de este mismo repo, carpeta `api/`)
 
-- <img src="https://skillicons.dev/icons?i=nodejs" width="20" height="20" alt="Node.js"/> **Node.js** – Entorno de ejecución del servidor de contacto.
-- <img src="https://skillicons.dev/icons?i=express" width="20" height="20" alt="Express"/> **Express** – Framework para la ruta que recibe los datos del formulario.
+- <img src="https://skillicons.dev/icons?i=nodejs" width="20" height="20" alt="Node.js"/> **Node.js** – Entorno de ejecución de la función que recibe los datos del formulario.
+- <img src="https://skillicons.dev/icons?i=vercel" width="20" height="20" alt="Vercel"/> **Vercel Serverless Functions** – Aloja el backend junto al frontend, sin necesidad de un servidor propio corriendo 24/7.
 - **Nodemailer** – Envía el mensaje del formulario directamente a mi correo electrónico.
-- **CORS** – Permite que el portfolio (en otro origen) pueda comunicarse con este backend.
-- **dotenv** – Gestiona de forma segura las credenciales del correo.
+- Variables de entorno (credenciales del correo) gestionadas desde el panel de Vercel.
 
 ---
 
@@ -50,13 +49,7 @@ Este portfolio muestra mi perfil como desarrollador web, mi stack tecnológico, 
 
 ## 🔗 Demo en vivo
 
-*(Añade aquí el enlace cuando lo despliegues en Vercel)*
-
----
-
-## Proyecto relacionado
-
-- [Backend del portfolio](https://github.com/mkdev000/portfolio-backend)
+[kevinmecinas.vercel.app](https://kevinmecinas.vercel.app)
 
 ---
 
