@@ -15,47 +15,50 @@ import {
   SiMysql,
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
-
-const cards = [
-  {
-    icon: <FaCode />,
-    title: "Experiencia en Desarrollo Web",
-    text: "BUSCA ACTIVA DE FCT",
-    extra: "Desarrollo continuo de aplicaciones web (React, Node.js, SQL).",
-    link: "#projects",
-  },
-  {
-    icon: <FaBriefcase />,
-    title: "Experiencia Profesional",
-    text: "INDALCO SL",
-    extra: "Trabajo en equipo y resolución de problemas.",
-    link: "https://www.indalcopvc.com/",
-  },
-  {
-    icon: <FaGraduationCap />,
-    title: "Educación Formación Profesional",
-    text: "ILERNA",
-    extra: "Estudiante CFGS DAW. Aprendizaje autodidacta y nivel B2 de inglés",
-    link: "/notas-kevin-daw.pdf",
-  },
-];
-
-const techStack = [
-  { icon: SiHtml5, color: "#E34F26", name: "HTML5", experience: "Estructura semántica" },
-  { icon: SiCss, color: "#1572B6", name: "CSS3", experience: "Diseño responsive" },
-  { icon: SiJavascript, color: "#F7DF1E", name: "JavaScript", experience: "Interactividad" },
-  { icon: SiTypescript, color: "#3178C6", name: "TypeScript", experience: "Tipado seguro" },
-  { icon: SiReact, color: "#61DAFB", name: "React", experience: "Componentes reutilizables" },
-  { icon: SiTailwindcss, color: "#06B6D4", name: "Tailwind CSS", experience: "Utility First CSS" },
-  { icon: SiNodedotjs, color: "#5FA04E", name: "Node.js", experience: "Backend" },
-  { icon: SiExpress, color: "#000000", name: "Express", experience: "APIs REST" },
-  { icon: SiGit, color: "#F05032", name: "Git", experience: "Control de versiones" },
-  { icon: SiGithub, color: "#181717", name: "GitHub", experience: "Repositorios y colaboración" },
-  { icon: SiMysql, color: "#4479A1", name: "MySQL", experience: "Bases de datos" },
-  { icon: DiVisualstudio, color: "#007ACC", name: "VS Code", experience: "Entorno de trabajo diario" },
-];
+import { useLanguage } from "../../i18n/LanguageContext";
 
 function About() {
+  const { t } = useLanguage();
+
+  const cards = [
+    {
+      icon: <FaCode />,
+      title: t.about.cards.experiencia.title,
+      text: t.about.cards.experiencia.text,
+      extra: t.about.cards.experiencia.extra,
+      link: "#projects",
+    },
+    {
+      icon: <FaBriefcase />,
+      title: t.about.cards.profesional.title,
+      text: t.about.cards.profesional.text,
+      extra: t.about.cards.profesional.extra,
+      link: "https://www.indalcopvc.com/",
+    },
+    {
+      icon: <FaGraduationCap />,
+      title: t.about.cards.educacion.title,
+      text: t.about.cards.educacion.text,
+      extra: t.about.cards.educacion.extra,
+      link: "/notas-kevin-daw.pdf",
+    },
+  ];
+
+  const techStack = [
+    { icon: SiHtml5, color: "#E34F26", name: "HTML5", experience: t.about.tech.html },
+    { icon: SiCss, color: "#1572B6", name: "CSS3", experience: t.about.tech.css },
+    { icon: SiJavascript, color: "#F7DF1E", name: "JavaScript", experience: t.about.tech.js },
+    { icon: SiTypescript, color: "#3178C6", name: "TypeScript", experience: t.about.tech.ts },
+    { icon: SiReact, color: "#61DAFB", name: "React", experience: t.about.tech.react },
+    { icon: SiTailwindcss, color: "#06B6D4", name: "Tailwind CSS", experience: t.about.tech.tailwind },
+    { icon: SiNodedotjs, color: "#5FA04E", name: "Node.js", experience: t.about.tech.node },
+    { icon: SiExpress, color: "#000000", name: "Express", experience: t.about.tech.express },
+    { icon: SiGit, color: "#F05032", name: "Git", experience: t.about.tech.git },
+    { icon: SiGithub, color: "#181717", name: "GitHub", experience: t.about.tech.github },
+    { icon: SiMysql, color: "#4479A1", name: "MySQL", experience: t.about.tech.mysql },
+    { icon: DiVisualstudio, color: "#007ACC", name: "VS Code", experience: t.about.tech.vscode },
+  ];
+
   return (
     <motion.section
       id="about"
@@ -66,11 +69,11 @@ function About() {
       transition={{ duration: 0.7 }}
     >
       <h4 className="text-center mb-2 text-lg">
-        Conoce más
+        {t.about.conoceMas}
       </h4>
 
       <h2 className="text-center text-5xl font-semibold">
-        Sobre mí
+        {t.about.titulo}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-center gap-10 my-20">
@@ -96,7 +99,7 @@ function About() {
             viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.6 }}
           >
-            Soy Kevin Mecinas, desarrollador web especializado en React, Node.js (Express) y SQL. Compagino mis estudios en DAW y proyectos personales con mi trabajo como carpintero metálico, donde en cuatro años he forjado un perfil riguroso, preciso y orientado al detalle. Con nivel B2 de inglés y una fuerte vocación colaborativa, destaco por mi rápida adaptación técnica y resolución de problemas. Busco dar el salto al desarrollo de software para aportar valor desde el primer día y diseñar arquitecturas digitales eficientes y escalables.
+            {t.about.descripcion}
           </motion.p>
 
 
@@ -109,7 +112,7 @@ function About() {
           >
             {cards.map((card) => (
               <li
-                key={card.title}
+                key={card.link}
                 className="w-full max-w-xs min-h-[350px] border-[0.5px] border-gray-400 dark:border-[#848b96] rounded-xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[6px_6px_0px_#a7a7a7] flex flex-col"
               >
                 <div className="text-2xl mt-3 mb-4 text-gray-700 dark:text-[#e3e3e3]">
@@ -128,13 +131,13 @@ function About() {
                   {card.extra}
                 </p>
 
-                <a
-                  href={card.link}
+                
+                  <a href={card.link}
                   target={card.link.startsWith("#") ? undefined : "_blank"}
                   rel={card.link.startsWith("#") ? undefined : "noopener noreferrer"}
-                  className="mt-auto w-fit flex items-center justify-center gap-2 border-[0.5px] border-gray-400 dark:border-[#848b96] rounded-xl px-12 py-2 text-sm transition-all duration-300 hover:bg-gray-100 dark:hover:bg-[#363636]"
+                  className="mt-auto w-fit flex items-center justify-center gap-2 border-[0.5px] border-gray-400 dark:border-[#848b96] rounded-xl px-12 py-2 text-sm whitespace-nowrap transition-all duration-300 hover:bg-gray-100 dark:hover:bg-[#363636]"
                 >
-                  Ver más
+                  {t.about.verMas}
                 </a>
               </li>
             ))}
@@ -148,7 +151,7 @@ function About() {
             transition={{ duration: 0.6 }}
           >
             <h4 className="text-center mt-6 mb-8 text-lg font-medium">
-              Stack Tecnológico
+              {t.about.stackTecnologico}
             </h4>
 
             <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">

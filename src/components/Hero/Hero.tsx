@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
 import fotoPerfil from "../../assets/images/foto-perfil.jpg";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 
 function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="inicio"
@@ -33,7 +36,7 @@ function Hero() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.35 }}
         >
-          ¡Hola! Soy Kevin Mecinas Jiménez
+          {t.hero.saludo}
         </motion.p>
 
         <motion.h1
@@ -43,7 +46,7 @@ function Hero() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.75, delay: 0.5 }}
         >
-          Desarrollador Web
+          {t.hero.titulo}
         </motion.h1>
 
         <motion.p
@@ -53,7 +56,7 @@ function Hero() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.75 }}
         >
-          Enfocado en crear interfaces limpias, rápidas y usables. Construyo soluciones digitales utilizando React y Node.js, apoyándome en tecnologías modernas para desarrollar proyectos completos. Actualmente busco unirme a un equipo donde pueda seguir creciendo profesionalmente y aportar valor desde el primer día.
+          {t.hero.descripcion}
         </motion.p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
@@ -65,7 +68,7 @@ function Hero() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.4, delay: 1.15 }}
           >
-            Contáctame
+            {t.hero.contactame}
             <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </motion.a>
 
@@ -78,7 +81,7 @@ function Hero() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 1.3 }}
           >
-            Descargar CV
+            {t.hero.descargarCV}
             <FaDownload />
           </motion.a>
         </div>

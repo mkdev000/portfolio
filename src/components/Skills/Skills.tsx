@@ -14,8 +14,11 @@ import {
   SiGithub,
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 function Skills() {
+  const { t } = useLanguage();
+
   return (
     <motion.section
   id="skills"
@@ -26,11 +29,11 @@ function Skills() {
   transition={{ duration: 0.7 }}
 >
       <h4 className="text-center mb-2 text-lg">
-        Estas son mis
+        {t.skills.estasSonMis}
       </h4>
 
       <h2 className="text-center text-5xl font-semibold">
-        Habilidades
+        {t.skills.titulo}
       </h2>
 
       <motion.p
@@ -40,7 +43,7 @@ function Skills() {
   viewport={{ once: false, amount: 0.5 }}
   transition={{ duration: 0.6 }}
 >
-  Mi perfil combina una base técnica sólida en tecnologías frontend y backend con la resiliencia y el trabajo en equipo desarrollados en entornos de alta exigencia. Esta suma de habilidades me permite afrontar retos complejos con una mentalidad estructurada, adaptable y siempre orientada a resultados.
+  {t.skills.descripcion}
 </motion.p>
 
       <motion.div
@@ -57,14 +60,12 @@ function Skills() {
             <FaHandshake className="text-purple-700" size={20} />
           </div>
 
-          <h3 className="font-semibold mb-3">Soft Skills</h3>
+          <h3 className="font-semibold mb-3">{t.skills.softSkills.title}</h3>
 
           <ul className="list-disc list-inside flex flex-col gap-3 text-sm text-gray-600 dark:text-[#e3e3e3] marker:text-gray-400 dark:marker:text-[#838383]">
-            <li>Trabajo en equipo</li>
-            <li>Pensamiento crítico</li>
-            <li>Resolución de problemas</li>
-            <li>Adaptabilidad</li>
-            <li>Comunicación efectiva</li>
+            {t.skills.softSkills.items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
 
@@ -74,49 +75,49 @@ function Skills() {
             <SiReact className="text-blue-700" size={20} />
           </div>
 
-          <h3 className="font-semibold mb-3">Frontend</h3>
+          <h3 className="font-semibold mb-3">{t.skills.frontend}</h3>
 
           <ul className="flex flex-col gap-3 text-sm">
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiHtml5 color="#E34F26" size={16} /> HTML
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
 
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiCss color="#1572B6" size={16} /> CSS
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
 
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiJavascript color="#F7DF1E" size={16} /> JavaScript
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
 
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiTypescript color="#3178C6" size={16} /> TypeScript
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
 
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiReact color="#61DAFB" size={16} /> React
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
 
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiTailwindcss color="#06B6D4" size={16} /> Tailwind CSS
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
           </ul>
         </div>
@@ -127,44 +128,44 @@ function Skills() {
             <FaServer className="text-green-700" size={18} />
           </div>
 
-          <h3 className="font-semibold mb-3">Backend</h3>
+          <h3 className="font-semibold mb-3">{t.skills.backend}</h3>
 
           <ul className="flex flex-col gap-3 text-sm">
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiNodedotjs color="#5FA04E" size={16} /> Node.js
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiExpress color="#000000" size={16} /> Express
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Intermedio</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.intermedio}</span>
             </li>
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiMysql color="#4479A1" size={16} /> MySQL
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Intermedio</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.intermedio}</span>
             </li>
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiGit color="#F05032" size={16} /> Git
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <SiGithub color="#181717" size={16} /> GitHub
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
             <li className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-gray-700 dark:text-[#e3e3e3]">
                 <DiVisualstudio color="#007ACC" size={16} /> VS Code
               </span>
-              <span className="text-xs text-gray-400 dark:text-[#838383]">Avanzado</span>
+              <span className="text-xs text-gray-400 dark:text-[#838383]">{t.skills.avanzado}</span>
             </li>
           </ul>
         </div>

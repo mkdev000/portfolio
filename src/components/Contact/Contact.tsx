@@ -2,8 +2,10 @@ import { FiMail, FiArrowRight, FiHeart } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 function Contact() {
+  const { t } = useLanguage();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -72,11 +74,11 @@ function Contact() {
     >
 
       <h2 className="text-center text-5xl font-semibold">
-        Contáctame
+        {t.contact.titulo}
       </h2>
 
       <p className="text-center mt-6 max-w-2xl mx-auto text-gray-600 dark:text-[#838383] leading-8">
-        Si tienes alguna pregunta, consulta o feedback, no dudes en contactarme.
+        {t.contact.descripcion}
       </p>
 
       <motion.div
@@ -94,7 +96,7 @@ function Contact() {
             <input
               type="text"
               required
-              placeholder="Introduce tu nombre"
+              placeholder={t.contact.placeholderNombre}
               value={formData.name}
               onChange={(e) =>
                 setFormData({
@@ -108,7 +110,7 @@ function Contact() {
             <input
               type="email"
               required
-              placeholder="Introduce tu correo electrónico"
+              placeholder={t.contact.placeholderEmail}
               value={formData.email}
               onChange={(e) =>
                 setFormData({
@@ -123,7 +125,7 @@ function Contact() {
           <textarea
             required
             rows={7}
-            placeholder="Introduce tu mensaje"
+            placeholder={t.contact.placeholderMensaje}
             value={formData.message}
             onChange={(e) =>
               setFormData({
@@ -139,18 +141,18 @@ function Contact() {
             disabled={loading}
             className="w-fit mx-auto flex items-center gap-2 px-8 py-3 rounded-full bg-black dark:bg-[#363636] text-white dark:text-[#e3e3e3] font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[6px_6px_0px_#a7a7a7] disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {loading ? "Enviando..." : <>Enviar <FiArrowRight /></>}
+            {loading ? t.contact.enviando : <>{t.contact.enviar} <FiArrowRight /></>}
           </button>
 
           {success && (
             <p className="text-green-600 text-center font-medium mt-4">
-              Formulario enviado con éxito.
+              {t.contact.exito}
             </p>
           )}
 
           {error && (
             <p className="text-red-600 text-center font-medium mt-4">
-              Ha ocurrido un error. Inténtalo de nuevo.
+              {t.contact.error}
             </p>
           )}
 
@@ -172,7 +174,7 @@ function Contact() {
       >
 
         <div className="flex items-center gap-1.5">
-          <span>Desarrollado por Kevin</span>
+          <span>{t.contact.desarrolladoPor}</span>
           <FiHeart className="text-pink-400" />
         </div>
 

@@ -10,6 +10,7 @@ import {
   SiMysql,
 } from "react-icons/si";
 import { FaGithub, FaArrowRight } from "react-icons/fa";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const techIcons = {
   React: { icon: SiReact, color: "#61DAFB" },
@@ -30,6 +31,7 @@ type Project = {
 };
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const { t } = useLanguage();
   const rotation = index % 2 === 1 ? "rotate-3" : "-rotate-3";
 
   return (
@@ -86,7 +88,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-black dark:bg-[#363636] text-white dark:text-[#e3e3e3] text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[4px_4px_0px_#a7a7a7]"
           >
-            Demo
+            {t.projects.demo}
             <FaArrowRight size={12} />
           </a>
 
@@ -97,7 +99,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className="flex items-center gap-2 px-6 py-2.5 rounded-full border-[0.5px] border-gray-400 dark:border-[#363636] text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.15)] dark:hover:shadow-[4px_4px_0px_#a7a7a7]"
           >
             <FaGithub size={15} />
-            GitHub
+            {t.projects.github}
           </a>
         </div>
 
@@ -107,42 +109,42 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
-const projects = [
-   {
-    title: "KmTask",
-    description:
-      "Gestor de tareas personal con autenticación de usuarios (JWT + bcrypt), tareas privadas por usuario, prioridades, calendario y panel con estadísticas en tiempo real.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "MySQL",
-    ],
-    image: kmtaskImg,
-    github: "https://github.com/mkdev000/gestor-tareas-frontend",
-    demo: "https://kmtask.vercel.app",
-  },
-  {
-    title: "Rutlink",
-    description:
-      "Acortador de URLs con estadísticas de clics en tiempo real. Genera enlaces cortos, cópialos al instante y consulta cuántas veces se han visitado.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "MySQL",
-    ],
-    image: rutlinkImg,
-    github: "https://github.com/mkdev000/acortador-urls-frontend",
-    demo: "https://rutlink.vercel.app",
-  },
-];
-
 function Projects() {
+  const { t } = useLanguage();
+
+  const projects = [
+    {
+      title: "KmTask",
+      description: t.projects.kmtask.description,
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "MySQL",
+      ],
+      image: kmtaskImg,
+      github: "https://github.com/mkdev000/gestor-tareas-frontend",
+      demo: "https://kmtask.vercel.app",
+    },
+    {
+      title: "Rutlink",
+      description: t.projects.rutlink.description,
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "MySQL",
+      ],
+      image: rutlinkImg,
+      github: "https://github.com/mkdev000/acortador-urls-frontend",
+      demo: "https://rutlink.vercel.app",
+    },
+  ];
+
   return (
     <motion.section
       id="projects"
@@ -153,11 +155,11 @@ function Projects() {
       transition={{ duration: 0.7 }}
     >
       <h4 className="text-center mb-2 text-lg">
-        Explora mis
+        {t.projects.explora}
       </h4>
 
       <h2 className="text-center text-5xl font-semibold">
-        Proyectos
+        {t.projects.titulo}
       </h2>
 
       <motion.p
@@ -167,7 +169,7 @@ function Projects() {
         viewport={{ once: false, amount: 0.5 }}
         transition={{ duration: 0.6 }}
       >
-        Una selección de proyectos que reflejan mi evolución como desarrollador web. Cada uno de ellos ha sido diseñado para poner en práctica tecnologías modernas y resolver problemas reales mediante soluciones escalables y bien estructuradas.
+        {t.projects.descripcion}
       </motion.p>
 
       <div className="max-w-6xl mx-auto mt-16 flex flex-col gap-16">
