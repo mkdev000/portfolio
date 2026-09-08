@@ -27,7 +27,7 @@ function Contact() {
     setLoading(true);
 
     try {
-      await fetch("http://localhost:3000/contact", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
